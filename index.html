@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LOW DUO | Violonchelo & Contrabajo</title>
+
+<meta name="description"
+content="Low Duo. Música clásica para ceremonias, eventos culturales, empresariales y celebraciones privadas en San Juan, Argentina.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --black:#080808;
+    --dark:#111111;
+    --wine:#5a0f1a;
+    --wine-light:#7a1c2a;
+    --text:#f5f5f5;
+    --gray:#cfcfcf;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--black);
+    color:var(--text);
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+/* MENÚ */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:16px 24px;
+}
+
+.logo{
+    height:55px;
+}
+
+.menu{
+    display:flex;
+    gap:30px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:.95rem;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:var(--wine-light);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:120px 8% 80px;
+    gap:70px;
+}
+
+.hero-img{
+    flex:1;
+}
+
+.hero-img img{
+    width:100%;
+    border-radius:10px;
+}
+
+.hero-content{
+    flex:1;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:5rem;
+    font-weight:600;
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:var(--gray);
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.whatsapp-btn{
+    display:inline-block;
+
+    background:#25D366;
+    color:white;
+
+    text-decoration:none;
+
+    padding:15px 28px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.whatsapp-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* SECCIONES */
+
+section{
+    padding:110px 8%;
+}
+
+.section-title{
+    text-align:center;
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:3.5rem;
+
+    margin-bottom:60px;
+}
+
+/* VIDEOS */
+
+.videos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.videos iframe{
+    width:100%;
+    aspect-ratio:16/9;
+
+    border:none;
+    border-radius:10px;
+}
+
+/* GALERÍA */
+
+.carousel{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.carousel img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* SOBRE NOSOTROS */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.member{
+    background:var(--dark);
+    padding:25px;
+    border-radius:12px;
+}
+
+.member img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.member h3{
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+.member p{
+    color:var(--gray);
+    line-height:1.8;
+}
+
+/* PROPUESTA */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.service{
+    background:var(--dark);
+    padding:30px;
+    border-radius:12px;
+
+    border-left:4px solid var(--wine);
+}
+
+.service h3{
+    margin-bottom:15px;
+}
+
+.service p{
+    color:var(--gray);
+    line-height:1.7;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    background:
+    linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.8)),
+    url('hero.jpg');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.cta h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+
+    margin-bottom:20px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:auto;
+    margin-bottom:30px;
+}
+
+/* CONTACTO */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    color:var(--gray);
+    margin-bottom:10px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#999;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:3.5rem;
+}
+
+.about-grid{
+    grid-template-columns:1fr;
+}
+
+.carousel{
+    grid-template-columns:1fr 1fr;
+}
+
+.menu{
+    display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav">
+
+<img src="logo-lowduo.png" class="logo" alt="Low Duo">
+
+<nav class="menu">
+<a href="#inicio">Inicio</a>
+<a href="#galeria">Galería</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#propuesta">Propuesta</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+</div>
+</header>
+
+<section class="hero" id="inicio">
+
+<div class="hero-img">
+<img src="hero.jpg" alt="Low Duo">
+</div>
+
+<div class="hero-content">
+
+<h1>LOW DUO</h1>
+
+<p>
+Dúo de violonchelo y contrabajo dedicado a la interpretación
+de música clásica para eventos culturales, ceremonias,
+celebraciones privadas y experiencias artísticas.
+</p>
+
+<a href="https://wa.me/549XXXXXXXXXX" class="whatsapp-btn">
+Contactar por WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<section id="galeria">
+
+<h2 class="section-title">Nuestra Música</h2>
+
+<div class="videos">
+
+<iframe src="https://www.youtube.com/embed/VIDEO1"></iframe>
+
+<iframe src="https://www.youtube.com/embed/VIDEO2"></iframe>
+
+<iframe src="https://www.youtube.com/embed/VIDEO3"></iframe>
+
+</div>
+
+<div class="carousel">
+
+<img src="galeria/foto1.jpg">
+<img src="galeria/foto2.jpg">
+<img src="galeria/foto3.jpg">
+<img src="galeria/foto4.jpg">
+
+</div>
+
+</section>
+
+<section id="nosotros">
+
+<h2 class="section-title">Sobre Nosotros</h2>
+
+<div class="about-grid">
+
+<div class="member">
+
+<img src="contrabajo.jpg">
+
+<h3>Contrabajo</h3>
+
+<p>
+Descripción del músico, formación académica,
+trayectoria artística, participación en orquestas,
+presentaciones y experiencia profesional.
+</p>
+
+</div>
+
+<div class="member">
+
+<img src="chelo.jpg">
+
+<h3>Violonchelo</h3>
+
+<p>
+Descripción del músico, estudios realizados,
+experiencia en conciertos, música de cámara
+y proyectos culturales.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="propuesta">
+
+<h2 class="section-title">Nuestra Propuesta</h2>
+
+<div class="services">
+
+<div class="service">
+<h3>🎻 Ceremonias</h3>
+<p>Casamientos religiosos y civiles.</p>
+</div>
+
+<div class="service">
+<h3>🍷 Bodegas</h3>
+<p>Experiencias musicales para turismo y degustaciones.</p>
+</div>
+
+<div class="service">
+<h3>🏛 Eventos Institucionales</h3>
+<p>Actos académicos, empresariales y culturales.</p>
+</div>
+
+<div class="service">
+<h3>🎉 Eventos Privados</h3>
+<p>Cumpleaños, aniversarios y celebraciones especiales.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>
+¿Buscás una experiencia musical única?
+</h2>
+
+<p>
+Contactanos para conocer nuestras propuestas y
+adaptar el repertorio a tu evento.
+</p>
+
+<a href="https://wa.me/549XXXXXXXXXX" class="whatsapp-btn">
+Solicitar información
+</a>
+
+</section>
+
+<section class="contact" id="contacto">
+
+<h2 class="section-title">Contacto</h2>
+
+<p>LOW DUO</p>
+<p>San Juan, Argentina</p>
+<p>WhatsApp</p>
+<p>Instagram</p>
+
+</section>
+
+<footer>
+© 2026 LOW DUO · Todos los derechos reservados
+</footer>
+
+</body>
+</html>
