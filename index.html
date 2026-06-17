@@ -50,10 +50,9 @@ header{
     width:100%;
     z-index:1000;
 
-    background:rgba(0,0,0,.75);
-    backdrop-filter:blur(12px);
+    background:transparent;
 
-    border-bottom:1px solid rgba(255,255,255,.08);
+    transition:.4s;
 }
 
 .nav{
@@ -88,63 +87,101 @@ header{
 
 /* HERO */
 
+/* HERO FULLSCREEN */
+
 .hero{
-    min-height:100vh;
+    height:100vh;
+    width:100%;
+
+    position:relative;
+
+    background:url('images/hero.jpg');
+    background-size:cover;
+    background-position:center center;
 
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
 
-    padding:120px 8% 80px;
-    gap:70px;
+    text-align:center;
 }
 
-.hero-img{
-    flex:1;
-}
+.hero-overlay{
+    position:absolute;
+    inset:0;
 
-.hero-img img{
-    width:100%;
-    border-radius:10px;
+    background:rgba(0,0,0,.45);
 }
 
 .hero-content{
-    flex:1;
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
 }
 
-.hero h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:5rem;
+.hero-title{
+    font-family:'Cormorant Garamond', serif;
+    font-size:6rem;
     font-weight:600;
+    letter-spacing:8px;
     line-height:1;
-    margin-bottom:20px;
+    margin:0;
 }
 
-.hero p{
-    color:var(--gray);
-    line-height:1.8;
-    margin-bottom:35px;
+.hero-subtitle{
+    margin-top:15px;
+
+    font-family:'Montserrat', sans-serif;
+    font-size:1rem;
+
+    letter-spacing:5px;
+    text-transform:uppercase;
+
+    color:#ddd;
 }
 
-.whatsapp-btn{
-    display:inline-block;
+.hero-logo{
+    width:min(85vw,700px);
+}
 
-    background:#25D366;
+.hero-subtitle{
+    margin-top:20px;
+
+    letter-spacing:4px;
+    text-transform:uppercase;
+
+    color:#ddd;
+}
+
+.scroll-down{
+    display:block;
+
+    margin-top:60px;
+
     color:white;
-
     text-decoration:none;
 
-    padding:15px 28px;
+    font-size:2rem;
 
-    border-radius:50px;
-
-    font-weight:600;
-
-    transition:.3s;
+    animation:float 2s infinite;
 }
 
-.whatsapp-btn:hover{
-    transform:translateY(-3px);
+@keyframes float{
+
+0%,100%{
+    transform:translateY(0);
+}
+
+50%{
+    transform:translateY(10px);
+}
+
 }
 
 /* SECCIONES */
@@ -317,6 +354,15 @@ footer{
 .menu{
     display:none;
 }
+.hero-title{
+    font-size:4rem;
+    letter-spacing:4px;
+}
+
+.hero-subtitle{
+    font-size:.85rem;
+    letter-spacing:3px;
+}
 
 }
 
@@ -343,22 +389,18 @@ footer{
 
 <section class="hero" id="inicio">
 
-<div class="hero-img">
-<img src="images/hero.jpg" alt="Low Duo">
-</div>
+<div class="hero-overlay"></div>
 
 <div class="hero-content">
 
-<h1>LOW DUO PRUEBA</h1>
+<h1 class="hero-title">LOWDUO</h1>
 
-<p>
-Dúo de violonchelo y contrabajo dedicado a la interpretación
-de música clásica para eventos culturales, ceremonias,
-celebraciones privadas y experiencias artísticas.
+<p class="hero-subtitle">
+Violonchelo & Contrabajo
 </p>
 
-<a href="https://wa.me/549XXXXXXXXXX" class="whatsapp-btn">
-Contactar por WhatsApp
+<a href="#galeria" class="scroll-down">
+↓
 </a>
 
 </div>
