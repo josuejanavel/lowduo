@@ -95,15 +95,17 @@ header{
 
     position:relative;
 
-    background:url('images/hero.jpg');
+    background-image:url('images/hero-desktop.jpg');
     background-size:cover;
     background-position:center center;
 
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-end;
 
     text-align:center;
+
+    padding-bottom:120px;
 }
 
 .hero-overlay{
@@ -335,6 +337,10 @@ footer{
 @media(max-width:900px){
 
 .hero{
+    background-image:url('images/hero-mobile.jpg');
+}
+
+.hero{
     flex-direction:column;
     text-align:center;
 }
@@ -396,7 +402,7 @@ footer{
 <h1 class="hero-title">LOWDUO</h1>
 
 <p class="hero-subtitle">
-Violonchelo & Contrabajo
+Cello & Doublebass
 </p>
 
 <a href="#galeria" class="scroll-down">
