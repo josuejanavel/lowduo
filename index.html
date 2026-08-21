@@ -282,6 +282,53 @@ section{
     color:var(--gray);
     line-height:1.7;
 }
+.service{
+    background:var(--dark);
+    padding:30px;
+    border-radius:12px;
+
+    border-left:4px solid var(--wine);
+
+    transition:
+        transform .4s ease,
+        background .4s ease,
+        box-shadow .4s ease;
+}
+
+.service-more{
+    display:block;
+
+    max-height:0;
+    opacity:0;
+
+    overflow:hidden;
+
+    margin-top:0;
+
+    color:var(--gray);
+    font-size:.85rem;
+    line-height:1.6;
+
+    transition:
+        max-height .4s ease,
+        opacity .4s ease,
+        margin-top .4s ease;
+}
+
+.service:hover{
+    background:#420909;
+
+    transform:translateY(8px) scale(1.03);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.service:hover .service-more{
+    max-height:60px;
+    opacity:1;
+
+    margin-top:18px;
+}
 
 /* CTA */
 
@@ -498,23 +545,39 @@ En la actualidad, Charlie reside en San Juan, Argentina, donde se desempeña com
 <div class="services">
 
 <div class="service">
-<h3>🎻 Ceremonias</h3>
-<p>Bodas religiosas y civiles.</p>
+    <h3>🎻 Ceremonias</h3>
+    <p>Casamientos religiosos y civiles.</p>
+    <span class="service-more">
+        Música en vivo para acompañar momentos únicos
+        con un repertorio adaptado a cada ceremonia.
+    </span>
 </div>
 
 <div class="service">
-<h3>🍷 Bodegas</h3>
-<p>Experiencias musicales para turismo y degustaciones.</p>
+    <h3>🍷 Bodegas</h3>
+    <p>Experiencias musicales para turismo y degustaciones.</p>
+    <span class="service-more">
+        Una propuesta elegante para acompañar degustaciones,
+        visitas y experiencias gastronómicas.
+    </span>
 </div>
 
 <div class="service">
-<h3>🏛 Eventos Institucionales</h3>
-<p>Actos académicos, empresariales y culturales.</p>
+    <h3>🏛 Eventos Institucionales</h3>
+    <p>Actos académicos, empresariales y culturales.</p>
+    <span class="service-more">
+        Música en vivo para darle identidad y distinción
+        a eventos institucionales y empresariales.
+    </span>
 </div>
 
 <div class="service">
-<h3>🎉 Conciertos Privados</h3>
-<p>Cumpleaños, aniversarios y celebraciones especiales.</p>
+    <h3>🎉 Conciertos Privados</h3>
+    <p>Cumpleaños, aniversarios y celebraciones especiales.</p>
+    <span class="service-more">
+        Un repertorio pensado para crear una atmósfera especial
+        en celebraciones y encuentros privados.
+    </span>
 </div>
 
 </div>
