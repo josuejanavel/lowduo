@@ -328,17 +328,20 @@ section{
     opacity:1;
     margin-top:18px;
 }
+.service:hover .service-arrow{
+    opacity:0;
+    height:0;
+    margin:0;
+}
 .service-arrow{
     display:block;
-    
     margin-top:25px;
-    
     text-align:center;
-    
     font-size:2.4rem;
     line-height:1;
-    
     color:#aaa;
+
+    transition:opacity .3s ease;
 }
 
 /* CTA */
@@ -602,7 +605,7 @@ Nuestra propuesta combina calidad musical, sensibilidad y un repertorio cuidados
     <p>Cumpleaños, aniversarios y celebraciones especiales.</p>
 
     <span class="service-arrow">↓</span>
-    
+
     <span class="service-more">
         Casas privadas · Reuniones íntimas · Grupos selectos
 Transformamos tu celebración en una experiencia exclusiva a través de la música en vivo.
