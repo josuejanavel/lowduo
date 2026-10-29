@@ -323,6 +323,15 @@ section{
     box-shadow:0 15px 35px rgba(0,0,0,.35);
 }
 
+.service h3 [data-lucide] {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.6;
+    color: #c9a46a;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
 /* TARJETAS: apertura y cierre */
 .service-more {
     display: block;
@@ -491,6 +500,8 @@ footer{
 }
 
 </style>
+
+<script src="https://unpkg.com/lucide@0.468.0"></script>
 </head>
 
 <body>
@@ -595,7 +606,10 @@ En la actualidad, Charlie reside en San Juan, Argentina, donde se desempeña com
 <div class="services">
 
 <div class="service">
-    <h3>🎻 Ceremonias</h3>
+    <h3>
+    <i data-lucide="heart"></i>
+    Ceremonias
+    </h3>
 
     <p>Casamientos religiosos y civiles.</p>
 
@@ -615,7 +629,10 @@ Seleccionamos cuidadosamente el repertorio para cada ocasión, adaptándonos al 
 </div>
 
 <div class="service">
-    <h3>🍷 Bodegas</h3>
+    <h3>
+    <i data-lucide="wine"></i>
+    Bodegas
+</h3>
     <p>Experiencias musicales para turismo y degustaciones.</p>
 
     <button class="service-arrow"
@@ -633,7 +650,10 @@ Creamos momentos especiales para contemplar, disfrutar y viajar a través de la 
 </div>
 
 <div class="service">
-    <h3>🏛 Eventos Institucionales</h3>
+    <h3>
+    <i data-lucide="landmark"></i>
+    Eventos Institucionales
+</h3>
     <p>Actos académicos, empresariales y culturales.</p>
 
     <button class="service-arrow"
@@ -652,7 +672,10 @@ Nuestra propuesta combina calidad musical, sensibilidad y un repertorio cuidados
 </div>
 
 <div class="service">
-    <h3>🎉 Conciertos Privados</h3>
+    <h3>
+    <i data-lucide="music"></i>
+    Conciertos Privados
+</h3>
     <p>Cumpleaños, aniversarios y celebraciones especiales.</p>
 
     <button class="service-arrow"
@@ -736,5 +759,10 @@ document.querySelectorAll('.service-arrow').forEach(function (arrow) {
     });
 });
 </script>
+
+<script>
+    lucide.createIcons();
+</script>
+
 </body>
 </html>
