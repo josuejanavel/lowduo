@@ -323,25 +323,55 @@ section{
     box-shadow:0 15px 35px rgba(0,0,0,.35);
 }
 
-.service:hover .service-more{
-    max-height:280px;
-    opacity:1;
-    margin-top:18px;
+/* TARJETAS: apertura y cierre */
+.service-more {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    color: var(--gray);
+    font-size: .85rem;
+    line-height: 1.6;
+    transition:
+        max-height .4s ease,
+        opacity .4s ease,
+        margin-top .4s ease;
 }
-.service:hover .service-arrow{
-    opacity:0;
-    height:0;
-    margin:0;
-}
-.service-arrow{
-    display:block;
-    margin-top:25px;
-    text-align:center;
-    font-size:2.4rem;
-    line-height:1;
-    color:#aaa;
 
-    transition:opacity .3s ease;
+/* Estado abierto */
+.service.is-open .service-more {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 18px;
+}
+
+/* Flecha */
+.service-arrow {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-family: inherit;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: #aaa;
+    cursor: pointer;
+    transition: transform .3s ease, color .3s ease;
+}
+
+/* Flecha girada cuando la tarjeta está abierta */
+.service.is-open .service-arrow {
+    transform: rotate(180deg);
+    color: white;
+}
+
+/* Evita que el hover abra la tarjeta automáticamente */
+.service:hover .service-more {
+    /* El estado lo controla .is-open */
 }
 .services{
     display:grid;
@@ -569,7 +599,12 @@ En la actualidad, Charlie reside en San Juan, Argentina, donde se desempeña com
 
     <p>Casamientos religiosos y civiles.</p>
 
-    <span class="service-arrow">↓</span>
+    <button class="service-arrow"
+        type="button"
+        aria-expanded="false"
+        aria-label="Mostrar más información">
+    ↓
+</button>
 
     <span class="service-more">
         Bodas · Bautismos · Cumpleaños · Aniversarios
@@ -583,7 +618,12 @@ Seleccionamos cuidadosamente el repertorio para cada ocasión, adaptándonos al 
     <h3>🍷 Bodegas</h3>
     <p>Experiencias musicales para turismo y degustaciones.</p>
 
-    <span class="service-arrow">↓</span>
+    <button class="service-arrow"
+        type="button"
+        aria-expanded="false"
+        aria-label="Mostrar más información">
+    ↓
+</button>
 
     <span class="service-more">
         Disfrutá de una experiencia única donde la música se une a la belleza de una bodega y al placer de un buen vino.
@@ -596,7 +636,12 @@ Creamos momentos especiales para contemplar, disfrutar y viajar a través de la 
     <h3>🏛 Eventos Institucionales</h3>
     <p>Actos académicos, empresariales y culturales.</p>
 
-    <span class="service-arrow">↓</span>
+    <button class="service-arrow"
+        type="button"
+        aria-expanded="false"
+        aria-label="Mostrar más información">
+    ↓
+</button>
 
     <span class="service-more">
         Actos gubernamentales · Eventos escolares · Aperturas y celebraciones especiales
@@ -610,7 +655,12 @@ Nuestra propuesta combina calidad musical, sensibilidad y un repertorio cuidados
     <h3>🎉 Conciertos Privados</h3>
     <p>Cumpleaños, aniversarios y celebraciones especiales.</p>
 
-    <span class="service-arrow">↓</span>
+    <button class="service-arrow"
+        type="button"
+        aria-expanded="false"
+        aria-label="Mostrar más información">
+    ↓
+</button>
 
     <span class="service-more">
         Casas privadas · Reuniones íntimas · Grupos selectos
@@ -670,6 +720,21 @@ Quiero saber más
 <footer>
 © 2026 LOW DUO · Todos los derechos reservados
 </footer>
+<script>
+document.querySelectorAll('.service-arrow').forEach(function (arrow) {
+    arrow.addEventListener('click', function () {
+        const card = arrow.closest('.service');
+        const isOpen = card.classList.toggle('is-open');
 
+        arrow.setAttribute('aria-expanded', isOpen);
+        arrow.setAttribute(
+            'aria-label',
+            isOpen
+                ? 'Ocultar información'
+                : 'Mostrar más información'
+        );
+    });
+});
+</script>
 </body>
 </html>
